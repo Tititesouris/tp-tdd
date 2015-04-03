@@ -40,7 +40,6 @@ public class Convert {
             put(40, "quarante");
             put(50, "cinquante");
             put(60, "soixante");
-            put(70, "soixante-dix");
             put(80, "quatre-vingt");
         }
     };
@@ -55,15 +54,29 @@ public class Convert {
 
         try {
             int number = Integer.parseInt(input);
+
             if (number <= 16 || number % 10 == 0) {
+                if (number >= 70 && number % 20 == 10) {
+                    return numbers.get(number - 10) + "-" + numbers.get(number % 20);
+                }
+                if (number == 80) {
+                    return numbers.get(number) + "s";
+                }
                 return numbers.get(number);
             }
-            else if (number <= 61 && number % 10 == 1) {
+            if (number % 10 == 1) {
+                if (number >= 70 && number % 20 == 11) {
+                    return getTens(number - 10) + "-et-onze";
+                }
+                if (number == 81) {
+                    return getTens(number) + "-un";
+                }
                 return getTens(number) + "-et-un";
             }
-            else {
+            if (number < 70) {
                 return getTens(number) + "-" + numbers.get(number % 10);
             }
+            return getTens(number - 10) + "-" + numbers.get(number % 20);
         }
         catch (Exception e) {
             return null;

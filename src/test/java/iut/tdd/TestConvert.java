@@ -185,5 +185,30 @@ public class TestConvert {
     public void test_num2text_soixantedix () {
         Assert.assertEquals("soixante-dix", Convert.num2text("70"));
     }
+
+    @Test
+    public void test_num2text_soixanteetonze () {
+        Assert.assertEquals("soixante-et-onze", Convert.num2text("71"));
+    }
+
+    @Test
+    public void test_num2text_soixantequatorze () {
+        Assert.assertEquals("soixante-quatorze", Convert.num2text("74"));
+    }
+
+    @Test
+    public void test_num2text_soixantedixneuf () {
+        Assert.assertEquals("soixante-dix-neuf", Convert.num2text("79"));
+    }
+
+    @Test
+    public void test_num2text_quatrevingt () {
+        Assert.assertEquals("quatre-vingts", Convert.num2text("80"));
+    }
+
+    @Test
+    public void test_num2text_quatrevingtun () {
+        Assert.assertEquals("quatre-vingt-un", Convert.num2text("81"));
+    }
 	
 }
